@@ -1,0 +1,14 @@
+<div class="grid-container">
+  <% @grid.each do |letter| %>
+    <div class="grid-item bg-light">
+      <span><%= letter %></span>
+    </div>
+  <% end %>
+</div>
+
+<form id="score-form" action="/score" method="post" data-turbo="false">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="guess" placeholder="Type your guess here">
+  <input class="btn-primary" id="score" type="submit" value="Score">
+</form>
+  
